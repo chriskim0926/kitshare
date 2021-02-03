@@ -3,7 +3,10 @@ import './home.css';
 
 const owner = () => {
     return (
+    
         <div id="bannerimage"> OWNER</div>
+
+     
     );
 };
 
