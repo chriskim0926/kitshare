@@ -20,6 +20,7 @@ mongoose.connect(
     useCreateIndex: true,
   }
 );
+require('url').parse(() => { });
 
 const connection = mongoose.connection;
 
