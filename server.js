@@ -20,7 +20,6 @@ mongoose.connect(
     useCreateIndex: true,
   }
 );
-require('url').parse(() => { });
 
 const connection = mongoose.connection;
 
@@ -38,9 +37,9 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client/build/index.html"));
+// });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
