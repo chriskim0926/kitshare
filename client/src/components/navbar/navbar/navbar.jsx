@@ -1,16 +1,17 @@
 import React from 'react';
 import 'materialize-css';
+import {  NavLink } from "react-router-dom";
 
 const navbar = () => {
   return (
     <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo">KitShare</a>
+      <NavLink to="/" class="brand-logo">KitShare</NavLink>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-         <li><a href="/owner">Reastraunt Owner</a></li>
-        <li><a href="/">Search Reastraunt</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><NavLink to="/owner">Reastraunt Owner</NavLink></li>
+        <li><NavLink to="/">Search Reastraunt</NavLink></li>
+        <li><NavLink to="/about">About Us</NavLink></li>
+        <li><NavLink to="/contact">Contact Us</NavLink></li>
       </ul>
     </div>
   </nav>

@@ -7,7 +7,8 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Home from "./pages/home";
 import Footer from "./components/navbar/Footer/footer";
-import Search from "./components/navbar/Search/search"
+import Search from "./components/navbar/Search/search";
+import Owner from "./pages/owner";
 
 
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/search" component={Home}/>
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/owner" component={Owner} />
           </Switch>
           <Search/>   
           <Footer/>  
