@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static("client/build"));
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/kitshare",
+  process.env.MONGODB_URI || "mongodb://localhost/Projects",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

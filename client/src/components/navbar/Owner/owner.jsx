@@ -72,7 +72,7 @@ const Owner = () => {
     <div>
       <div className="container">
         <div className="row">
-          <h1>Employee Directory</h1>
+          <h1>Restaurants Owner Admin</h1>
         </div>
         <div className="row">
         <input
