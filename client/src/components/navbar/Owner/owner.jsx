@@ -1,13 +1,13 @@
 // import React from 'react';
 import 'materialize-css';
-import "./search.css"
+import "./owner.css"
 // import logo from './logo192.png';
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 
 
-const Search = () => {
+const Owner = () => {
 
   const [input, setInput]　= useState('');
   const [employees, setEmployees] = useState([]);
@@ -140,4 +140,4 @@ const Search = () => {
 };
 
 
-export default Search;
+export default Owner;

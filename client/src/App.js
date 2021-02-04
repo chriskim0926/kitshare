@@ -7,7 +7,7 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Home from "./pages/home";
 import Footer from "./components/navbar/Footer/footer";
-import Owner from "./pages/owner";
+import Owner from "./pages/owners";
 import SignupPage from "./pages/signupPage"
 import { AuthProvider } from './context/AuthContext';
 
