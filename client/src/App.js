@@ -9,13 +9,15 @@ import Home from "./pages/home";
 import Footer from "./components/navbar/Footer/footer";
 import Owner from "./pages/owner";
 import SignupPage from "./pages/signupPage"
+import { AuthProvider } from './context/AuthContext';
 
 
 
 
 function App() {
   return (
-    <Router>
+
+   <Router>
       <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -27,6 +29,7 @@ function App() {
           </Switch>
           <Footer/>  
     </Router>
+
     
   );
 }

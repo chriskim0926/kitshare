@@ -1,35 +1,89 @@
 import React from 'react';
 import 'materialize-css';
+import "./search.css"
+import logo from './logo192.png';
+
 
 const search = () => {
-    return (
-        <table>
-        <thead>
-          <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-          </tr>
-        </thead>
+   
 
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
+   
+   return (
+<div>
+<input type="text" id="myInput" placeholder="Search for names.." title="Type in a name"/>
+
+<table id="myTable">
+  <tr class="header">
+    <th >Restaurant</th>
+    <th >Name</th>
+    <th >Address</th>
+    <th >Cuisine</th>
+    <th >Shareable Kitchen Space</th>
+    <th >Share Price</th>
+    <th >Availibility</th>
+    <th ></th>
+  </tr>
+  <tr>
+  <td><img src= {logo} alt="BigCo Inc. logo"/></td>
+    <td>Brass Work</td>
+    <td>123 Main St Suwanee, GA 30024</td>
+    <td>Burgers</td>
+    <td>500<a> sf</a></td>
+    <td>$1000</td>
+    <td>Ready To Share</td>
+  </tr>
+  <tr>
+  <td><img src= {logo} alt="BigCo Inc. logo"/></td>
+    <td>Chicken Run</td>
+    <td>123 Main St Suwanee, GA 30024</td>
+    <td>Wings</td>
+    <td>1000<a> sf</a></td>
+    <td>$2000</td>
+    <td>Ready To Share</td>
+  </tr>
+  <tr>
+  <td><img src= {logo} alt="BigCo Inc. logo"/></td>
+    <td>Brass Work</td>
+    <td>123 Main St Suwanee, GA 30024</td>
+    <td>Burgers</td>
+    <td>500<a> sf</a></td>
+    <td>$1000</td>
+    <td>Already Sharing</td>
+  </tr>
+  <tr>
+  <td><img src= {logo} alt="BigCo Inc. logo"/></td>
+    <td>Brass Work</td>
+    <td>123 Main St Suwanee, GA 30024</td>
+    <td>Burgers</td>
+    <td>500<a> sf</a></td>
+    <td>$1000</td>
+    <td>Ready To Share</td>
+  </tr>
+  <tr>
+  <td><img src= {logo} alt="BigCo Inc. logo"/></td>
+    <td>Brass Work</td>
+    <td>123 Main St Suwanee, GA 30024</td>
+    <td>Burgers</td>
+    <td>500<a> sf</a></td>
+    <td>$1000</td>
+    <td>Ready To Share</td>
+  </tr>
+  <tr>
+  <td><img src= {logo} alt="BigCo Inc. logo"/></td>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>123 Main St Suwanee, GA 30024</td>
+    <td>Italian</td>
+    <td>500<a> sf</a></td>
+    <td>$1000</td>
+    <td>Already Sharing</td>
+  </tr>
+  <tr>
+    <td>Paris specialites</td>
+    <td>France</td>
+  </tr>
+</table>
+
+</div>
     );
 };
 
