@@ -1,36 +1,31 @@
-import './App.css';
-import 'materialize-css';
-import { Button, Card, Row, Col } from 'react-materialize';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/navbar/navbar/navbar";
-import About from "./pages/about";
-import Contact from "./pages/contact";
-import Home from "./pages/home";
-import Footer from "./components/navbar/Footer/footer";
-import Owner from "./pages/owners";
-import SignupPage from "./pages/signupPage"
-import { AuthProvider } from './context/AuthContext';
-
-
+import Home from "./pages/home/Home"
+import About from "./pages/about/About"
+import Contact from "./pages/contact/Contact"
+import Listings from "./pages/listing/Listing"
+import Listinginfo from "./pages/listingInfo/listingInfo"
+import AddListing from "./pages/addListing/AddListing"
+import Owner from "./pages/owner/Owner"
+import NavBar from "./components/navbar/navbar/navbar"
+import Signup from "./components/signup/signup"
 
 
 function App() {
   return (
-
-   <Router>
-      <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/search" component={Home}/>
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/owner" component={Owner} />
-          <Route exact path="/signup" component={SignupPage} />
-          </Switch>
-          <Footer/>  
+    <Router>
+      <NavBar/>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/listings" component={Listings} />
+        <Route exact path="/listing/:id" component={Listinginfo} />
+        <Route exact path="/owner" component={Owner} />
+        <Route exact path="/owner/add" component={AddListing} />
+        <Route exact path="/signup" component={Signup} />
+      </Switch>
     </Router>
-
-    
   );
 }
 

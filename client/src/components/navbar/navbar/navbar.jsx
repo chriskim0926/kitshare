@@ -10,8 +10,8 @@ const navbar = () => {
     <div class="nav-wrapper">
       <NavLink to="/" className="brand-logo">KitShare</NavLink>
       <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><NavLink to="/owner">Reastraunt Owner</NavLink></li>
-        <li><NavLink to="/">Search Reastraunt</NavLink></li>
+        <li><NavLink to="/owner">Restaurant Owner</NavLink></li>
+        <li><NavLink to="/listings">Search Restaurant</NavLink></li>
         <li><NavLink to="/about">About Us</NavLink></li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
         <li> <NavLink to="/"  id="signin">Sign In</NavLink></li>
