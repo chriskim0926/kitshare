@@ -19,7 +19,7 @@ const restSeed = [
         cuisine: "burger",
         sf: 500,
         address: "123 Main St Suwanee, GA 30024",
-        availibility: true
+        availability: true
 
 
     },

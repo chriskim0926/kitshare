@@ -17,7 +17,7 @@ const ListingTableRow = ({
   cuisine,
   restaurantComment,
   imageURL,
-  availibility,
+  availability,
   getProducts,
 }) => {
   const deleteProduct = (id) => {
@@ -33,7 +33,7 @@ const ListingTableRow = ({
 
   const editProduct = (id, featured) => {
     axios
-      .put(`/api/restaurants/${id}`, { availibility: !availibility })
+      .put(`/api/restaurants/${id}`, { availability: !availability })
       .then((response) => {
         console.log(response.data);
         getProducts();
@@ -54,7 +54,7 @@ const ListingTableRow = ({
       <td>$ {sharePrice}</td>
       <td>{sf} sf</td>
       <td>{restaurantComment}</td>
-      <td>{availibility}</td>
+      <td>{availability}</td>
       <td><button>Share</button></td>
       
       <td>
