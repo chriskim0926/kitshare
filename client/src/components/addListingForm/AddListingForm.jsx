@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"
+import { useParams } from "react-router-dom";
 
 const AddListingForm = ({ buttonText, handleFormSubmit }) => {
   const [restaurant, setRestaurant] = useState("");
@@ -11,7 +13,44 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
   const [imageURL, setImageURL] = useState("");
   const [availability, setAvailability] = useState(false);
 
-  // onSubmit = {console.log("hello")}
+  
+  const { id } = useParams();
+
+  useEffect(() => {
+    console.log(id);
+    if (id) {
+      axios
+        .get(`/api/restaurants/${id}`)
+        .then((response) => {
+          console.log(response.data);
+          const {
+            _id,
+            restaurant,
+            contact,
+            address,
+            sharePrice,
+            sf,
+            cuisine,
+            restaurantComment,
+            imageURL,
+            availibility,
+      
+          } = response.data;
+          setRestaurant(restaurant);
+          setContact(contact);
+          setAddress(address);
+          setImageURL(imageURL);
+          setSharePrice(sharePrice);
+          setSf(sf);
+          setCuisine(cuisine);
+          setRestaurantComment(restaurantComment);
+          setAvailability(availibility);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [id]);
 
   return (
     <>
@@ -28,7 +67,7 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
             restaurantComment,
             imageURL,
             availability,
-          });
+          }, id);
         }}
       >
         <div className="row">
@@ -160,8 +199,7 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
         <div className="row">
           <button
             className="btn waves-effect waves-light"
-            style={{ background: "#EE6352" }}
-          >
+                     >
             Create New Listing
           </button>
         </div>

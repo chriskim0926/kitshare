@@ -1,7 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEdit, faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
@@ -17,26 +15,25 @@ const RestaurantTableRow = ({
   cuisine,
   restaurantComment,
   imageURL,
-  availability,
+  availibility,
   getProducts,
 }) => {
-  const deleteProduct = (id) => {
+  const deleteRestaurant = (id) => {
     axios
       .delete(`/api/restaurants/${id}`)
       .then(() => {
-        getProducts();
+        return window.location.reload()
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const editProduct = (id, featured) => {
+  const editrRetaurant = (id) => {
     axios
-      .put(`/api/restaurants/${id}`, { availability: !availability })
+      .put(`/api/restaurants/${id}`, { availibility: !availibility })
       .then((response) => {
         console.log(response.data);
-        getProducts();
       })
       .catch((err) => {
         console.log(err);
@@ -54,46 +51,16 @@ const RestaurantTableRow = ({
       {/* <td>{sharePrice}</td> */}
       {/* <td>{sf}</td> */}
       {/* <td>{restaurantComment}</td> */}
-      <td>{availability}</td>
-      <td><button>Edit</button></td>
-      <td><button>Delete</button></td>
-      
-      <td>
-        {/* <FontAwesomeIcon
-          icon={featured ? faStar : faStarOutline}
-          onClick={() => {
-            editProduct(_id, featured);
-          }}
-        /> */}
-      </td>
-      <td>
-        {/* <Link to={`/admin/${_id}`}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Link> */}
-      </td>
-      <td>
-        {/* <FontAwesomeIcon
-          icon={faTrash}
-          onClick={() => {
-            deleteProduct(_id);
-          }}
-        /> */}
-      </td>
+      <td>{availibility}</td>
+      <td><a class="waves-effect waves-light btn" onClick={() => {
+            editrRetaurant(_id);
+          }}>Edit</a></td>
+      <td><a class="waves-effect waves-light btn" onClick={() => {
+            deleteRestaurant(_id);
+          }}>Delete</a></td>
     </tr>
   );
 };
 
-// RestaurantTableRow.propTypes = {
-//   _id: PropTypes.string.isRequired,
-//   restaurant: PropTypes.string.isRequired,
-//   cuisine: PropTypes.string,
-//   price: PropTypes.number.isRequired,
-//   imageURL: PropTypes.string,
-//   address: PropTypes.string,
-//   sharePrice: PropTypes.number,
-//   sf: PropTypes.number,
-//   availability: PropTypes.bool,
-//   getProducts: PropTypes.func.isRequired,
-// };
 
 export default RestaurantTableRow;

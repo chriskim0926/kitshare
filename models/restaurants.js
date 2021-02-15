@@ -39,7 +39,7 @@ const restaurantSchema = new Schema({
   },
   availibility: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 });
 

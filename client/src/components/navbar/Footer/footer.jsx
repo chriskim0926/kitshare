@@ -4,12 +4,15 @@ import './footer.css';
 
 const footer = () => {
     return (
-        <footer className="page-footer">
+        // <footer className="page-footer">
         
-          <div className="container" id= "copyright">
-          © kitShare by Chris Kim
-        </div>
-      </footer>
+        //   <div className="container" id= "copyright">
+        //   © kitShare by Chris Kim
+        // </div>
+      // </footer>
+      <footer className = "footer">
+      <p>© kitShare by Chris Kim</p>
+    </footer>
     );
 };
 

@@ -13,24 +13,24 @@ router.get("/", (req, res) => {
     });
 });
 
-// router.get("/featured", (req, res) => {
-//   Restaurant.find({ availability: true })
-//     .limit(3)
-//     .then((availabilityRest) => {
-//       res.json(availabilityRest);
-//     });
-// });
+router.get("/featured", (req, res) => {
+  Restaurant.find({ availability: true })
+    .limit(3)
+    .then((availabilityRest) => {
+      res.json(availabilityRest);
+    });
+});
 
-// router.get("/:id", (req, res) => {
-//   Restaurant.findById(req.params.id)
-//     .then((foundRestaurant) => {
-//       res.json(foundRestaurant);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.status(404).end();
-//     });
-// });
+router.get("/:id", (req, res) => {
+  Restaurant.findById(req.params.id)
+    .then((foundRestaurant) => {
+      res.json(foundRestaurant);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).end();
+    });
+});
 
 router.post("/", (req, res) => {
   console.log(req.body);

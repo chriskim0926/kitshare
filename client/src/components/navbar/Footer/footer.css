@@ -1,13 +1,9 @@
-#copyright{
-    text-align: center;
-
-
-}
-.page-footer,
-.push {
+.footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #EE6352;
-}
+    background-color: lightgrey;
+    color: white;
+    text-align: center;
+ }
