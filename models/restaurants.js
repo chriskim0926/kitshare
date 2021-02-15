@@ -43,7 +43,7 @@ const restaurantSchema = new Schema({
   },
 });
 
-const Restaurant = mongoose.model("ktishare", restaurantSchema);
+const Restaurant = mongoose.model("Kitshare", restaurantSchema);
 
 module.exports = Restaurant;
 
