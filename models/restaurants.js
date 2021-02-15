@@ -11,7 +11,7 @@ const restaurantSchema = new Schema({
     type: String,
     trim: true,
   },
-  sharPrice: {
+  sharePrice: {
     type: Number,
     required: "Enter the price you would like to share your space for",
   },

@@ -52,23 +52,30 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
     }
   }, [id]);
 
+const testSubmit = (e) => {
+  e.preventDefault()
+  console.log("click submit button")
+}
+
   return (
     <>
       <form
         className="col s12"
-        onSubmit={(e) => {
-          handleFormSubmit(e, {
-            restaurant,
-            contact,
-            address,
-            sharePrice,
-            sf,
-            cuisine,
-            restaurantComment,
-            imageURL,
-            availability,
-          }, id);
-        }}
+        onSubmit= {testSubmit}
+        
+        // {(e) => {
+        //   handleFormSubmit(e, {
+        //     restaurant,
+        //     contact,
+        //     address,
+        //     sharePrice,
+        //     sf,
+        //     cuisine,
+        //     restaurantComment,
+        //     imageURL,
+        //     availability,
+        //   }, id);
+        // }}
       >
         <div className="row">
           <div className="input-field col s6">
