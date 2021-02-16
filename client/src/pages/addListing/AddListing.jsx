@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios"
 import AddListingForm from "../../components/addListingForm/AddListingForm"
 import AlertContext from "../../utils/alertContext";
@@ -6,6 +7,7 @@ import AlertContext from "../../utils/alertContext";
 
 const AddListing = () => {
   const alert = useContext(AlertContext);
+  const history = useHistory();
   
   const handleFormSubmit = 
   (e, listingInfo) => {
@@ -15,6 +17,8 @@ const AddListing = () => {
       .post("/api/restaurants", listingInfo)
       .then((response) => {
         console.log(response.data);
+        history.push("/owner");
+
         
       })
       .catch((err) => {

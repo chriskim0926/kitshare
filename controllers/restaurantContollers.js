@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/featured", (req, res) => {
+router.get("/listings", (req, res) => {
   Restaurant.find({ availability: true })
     .limit(3)
     .then((availabilityRest) => {

@@ -58,6 +58,11 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
 //   console.log("click submit button")
 // }
 
+
+// const imageURLUpload = (e) => {
+//   console.log(URL.createObjectURL(e.target.files[0]))
+// }
+
   return (
     <>
       <form
@@ -165,7 +170,9 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
               type="text"
               name="imageURL"
               value={imageURL}
-              onChange={(e) => {
+              onChange= 
+              {(e) => {
+                
                 setImageURL(e.target.value);
               }}
             />

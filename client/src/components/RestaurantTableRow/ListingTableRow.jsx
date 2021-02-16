@@ -1,12 +1,12 @@
-import React from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { useState } from "react";
+import Modal from "react-modal";
+import "./styles.css"
+
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEdit, faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
 
-
+Modal.setAppElement("#root");
 const ListingTableRow = ({
   _id,
   restaurant,
@@ -20,29 +20,14 @@ const ListingTableRow = ({
   availibility,
   getProducts,
 }) => {
-  const deleteProduct = (id) => {
-    axios
-      .delete(`/api/restaurants/${id}`)
-      .then(() => {
-        getProducts();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  const [isOpen, setIsOpen] = useState(false);
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
 
-  const editProduct = (id, featured) => {
-    axios
-      .put(`/api/restaurants/${id}`, { availibility: !availibility })
-      .then((response) => {
-        console.log(response.data);
-        getProducts();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+
   return (
+    <>
     <tr>
        <td>
         <img src={imageURL} alt={restaurant} style={{ height: "3em" }}></img>
@@ -55,30 +40,54 @@ const ListingTableRow = ({
       <td>{sf} sf</td>
       <td>{restaurantComment}</td>
       <td>{availibility}</td>
-      <td><a class="waves-effect waves-light btn">Share</a></td>
-      
       <td>
-        {/* <FontAwesomeIcon
-          icon={featured ? faStar : faStarOutline}
-          onClick={() => {
-            editProduct(_id, featured);
-          }}
-        /> */}
+      <div>
+      <button  onClick={toggleModal}>Inquire</button>
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel="My dialog"
+        id = "modal"
+      >
+        <div className = "container"> 
+        <div className = "row">
+          <div className = "row" style={{marginTop: "100px"}}>
+         <h1 className = "centered" style={{color: "black"}}>Contact Resaurant Owner</h1> 
+        </div>
+        </div>
+        </div>
+        <div className = "container">
+          <div className = "row">
+          <form className = "centered" style={{marginTop: "100px"}}>
+            <input type="text" placeholder= "Contact Name"/>
+            <input type="text" placeholder= "Contact Number"/>
+            <input type="text" placeholder= "Email"/>
+            <input type="text" placeholder= "Inquiry"/>
+          </form>
+        </div>
+
+        </div>
+   
+        <div className = "row">
+        <div className= "centered"><button className="waves-effect waves-light btn" onClick={toggleModal}>Send</button></div>
+
+        </div>
+
+  
+    
+         
+      </Modal>
+    </div>
       </td>
-      <td>
-        {/* <Link to={`/admin/${_id}`}>
-          <FontAwesomeIcon icon={faEdit} />
-        </Link> */}
-      </td>
-      <td>
-        {/* <FontAwesomeIcon
-          icon={faTrash}
-          onClick={() => {
-            deleteProduct(_id);
-          }}
-        /> */}
-      </td>
+
+ 
     </tr>
+    <div className = "App">
+      
+
+      </div>
+    </>
   );
 };
 
