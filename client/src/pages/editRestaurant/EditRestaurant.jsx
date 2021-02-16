@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import ListingForm from "../../components/addListingForm/AddListingForm";
 
 const EditRestaurant = () => {
-//   const history = useHistory();
+  const history = useHistory();
 
   const handleFormSubmit = (e, restaurantData, id) => {
     e.preventDefault();
@@ -12,7 +12,8 @@ const EditRestaurant = () => {
       .put(`/api/restaurants/${id}`, restaurantData)
       .then((response) => {
         console.log(response.data);
-        // history.push("/admin");
+        history.push("/owner");
+        
       })
       .catch((err) => {
         console.log(err);

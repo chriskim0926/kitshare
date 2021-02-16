@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link, Redirect } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEdit, faTrash, faStar } from "@fortawesome/free-solid-svg-icons";
 // import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
@@ -34,6 +35,7 @@ const RestaurantTableRow = ({
       .put(`/api/restaurants/${id}`, { availibility: !availibility })
       .then((response) => {
         console.log(response.data);
+        
       })
       .catch((err) => {
         console.log(err);
@@ -52,9 +54,11 @@ const RestaurantTableRow = ({
       {/* <td>{sf}</td> */}
       {/* <td>{restaurantComment}</td> */}
       <td>{availibility}</td>
-      <td><a class="waves-effect waves-light btn" onClick={() => {
+      <td><Link to={`/owner/${_id}`} className="waves-effect waves-light btn" onClick={() => {
             editRestaurant(_id);
-          }}>Edit</a></td>
+          }}>Edit</Link>
+          
+          </td>
       <td><a class="waves-effect waves-light btn" onClick={() => {
             deleteRestaurant(_id);
           }}>Delete</a></td>
