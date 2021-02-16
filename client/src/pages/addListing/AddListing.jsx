@@ -10,6 +10,7 @@ const AddListing = () => {
   const handleFormSubmit = 
   (e, listingInfo) => {
     e.preventDefault();
+    console.log(listingInfo)
     axios
       .post("/api/restaurants", listingInfo)
       .then((response) => {
@@ -21,6 +22,11 @@ const AddListing = () => {
 
       });
   };
+  // (e) => {
+  //   e.preventDefault()
+  //   console.log("click submit hello")
+  // }
+
 
 
   return (

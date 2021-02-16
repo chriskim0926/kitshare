@@ -29,7 +29,7 @@ const RestaurantTableRow = ({
       });
   };
 
-  const editrRetaurant = (id) => {
+  const editRestaurant = (id) => {
     axios
       .put(`/api/restaurants/${id}`, { availibility: !availibility })
       .then((response) => {
@@ -53,7 +53,7 @@ const RestaurantTableRow = ({
       {/* <td>{restaurantComment}</td> */}
       <td>{availibility}</td>
       <td><a class="waves-effect waves-light btn" onClick={() => {
-            editrRetaurant(_id);
+            editRestaurant(_id);
           }}>Edit</a></td>
       <td><a class="waves-effect waves-light btn" onClick={() => {
             deleteRestaurant(_id);
