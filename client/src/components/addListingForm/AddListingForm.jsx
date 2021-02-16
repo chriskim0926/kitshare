@@ -15,6 +15,7 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
 
   
   const { id } = useParams();
+  
 
   useEffect(() => {
     console.log(id);
@@ -207,7 +208,7 @@ const AddListingForm = ({ buttonText, handleFormSubmit }) => {
           <button
             className="btn waves-effect waves-light"
                      >
-            Create New Listing
+           {buttonText}
           </button>
         </div>
       </form>

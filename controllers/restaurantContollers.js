@@ -41,7 +41,7 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  Restaurant.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
+  Restaurant.findByIdAndUpdate(req.params.id, req.body).then(
     (updatedObject) => {
       res.json(updatedObject);
     }
