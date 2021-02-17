@@ -11,6 +11,7 @@ import NavBar from "./components/navbar/navbar/navbar"
 import Signup from "./components/signup/signup"
 import Footer from "./components/navbar/Footer/footer"
 import EditRestaurant from "./pages/editRestaurant/EditRestaurant"
+import Signin from "./components/signin/signin"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/owner" component={Owner} />
         <Route exact path="/owner/add" component={AddListing} />
         <Route exact path="/signup" component={Signup} />
+        <Route exact path="/signin" component={Signin} />
         <Route exact path="/owner/:id" component={EditRestaurant} />
       </Switch>
       <Footer/>

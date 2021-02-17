@@ -27,7 +27,7 @@ const navbar = () => {
       <NavLink to="/listings" className="w3-button">Search Restaurant</NavLink>
       <NavLink to="/about" className="w3-button">About Us</NavLink>
       <NavLink to="/contact" className="w3-button">Contact Us</NavLink>
-      <NavLink to="/"  id="signin" class="w3-button">Sign In</NavLink>
+      <NavLink to="/signin" className="w3-button">Sign In</NavLink>
       <NavLink to="/signup" className="w3-button">Sign Up</NavLink>
     </div>
   </div>
