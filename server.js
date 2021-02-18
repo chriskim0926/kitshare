@@ -30,6 +30,7 @@ connection.on("error", (err) => {
 });
 
 const RestaurantController = require("./controllers/restaurantContollers");
+const LoginController = require("./controllers/loginController");
 
 app.use(express.static("client/build"));
 
@@ -41,6 +42,7 @@ app.get("/api/config", (req, res) => {
 });
 
 app.use("/api/restaurants", RestaurantController);
+app.use("/api/auth", LoginController);
 
 // FIXME: Actually check the database for user and match credentials.
 app.post("/api/signin", (req, res) => {

@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
 
-const Signin = () => {
+const Signin = ({setToken}) => {
     const history = useHistory();
    
     const [email, setEmail] = useState("");
@@ -14,10 +14,11 @@ const Signin = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         axios
-        .post("/api/signin", {email, password})
+        .post("/api/auth/signin", {email: email,  password: password})
         .then((response) =>{
             console.log(response.data)
             alert("You have sucessfully login as " + email)
+            setToken(response.data.token)
             history.push("/owner")
         })
     }
