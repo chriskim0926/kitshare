@@ -43,10 +43,10 @@ app.get("/api/config", (req, res) => {
 app.use("/api/restaurants", RestaurantController);
 
 // FIXME: Actually check the database for user and match credentials.
-app.post("/api/login", (req, res) => {
+app.post("/api/signin", (req, res) => {
   res.json({
     message: "Successfully signed in.",
-    token: "banana",
+    token: "kitshare",
   });
 });
 
